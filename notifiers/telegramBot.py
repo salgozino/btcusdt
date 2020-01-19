@@ -32,7 +32,6 @@ class telegramBot():
             self.logger = logging.getLogger(__name__)   
         else:
             self.logger = logger
-        
         #Store the DataBase class.
         self.db = DB
         self.db.connect()
@@ -40,7 +39,7 @@ class telegramBot():
         self.main()
 
     def get_url(self):
-        contents = requests.get('https://random.dog/woof.json', proxies=self.proxies).json()    
+        contents = requests.get('https://random.dog/woof.json').json()    
         url = contents['url']
         return url
     
