@@ -205,6 +205,9 @@ class DB():
         table = self.rename_table_query(table)
         self.check_connection()
         
+        if not self.exist_table(table):
+            self.create_ticker_table(table)
+        
         placeholders = ', '.join(['%s'] * len(MD))
         columns = ', '.join(MD.keys())
         query = "INSERT INTO %s ( %s ) VALUES ( %s )" % (table, columns, placeholders)
