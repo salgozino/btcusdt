@@ -42,7 +42,7 @@ class BTCreader():
                         port=self.__mysql_port,
                         user=self.__mysql_user,
                         password=self.__mysql_password,
-                        db = 'crypto',
+                        db = 'binance',
                         logger = self.logger)
 
         # start any sockets here, i.e a trade socket

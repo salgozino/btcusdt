@@ -14,7 +14,7 @@ if __name__ == '__main__':
             user=credentials_mysql['user'],
             password=credentials_mysql['password'],
             logger=logger,
-            db='crypto')
+            db='binance')
     
     tBot(credentials_telegram['token_telegram'],
          credentials_telegram['channel_id'],
