@@ -83,7 +83,7 @@ class telegramBot():
         data = self.db.read_last_row()
         context.bot.send_message(
             chat_id=update.message.chat_id,
-            text="El último precio que tengo del BTC es: {} con fecha {}".format(data['price'],data['trade_time'])
+            text="El último precio que tengo del BTC es: {} con fecha {} UTC".format(data['price'],data['trade_time'])
         )
     
     def callback_daily(self, context: CallbackContext):
