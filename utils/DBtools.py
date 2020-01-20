@@ -104,7 +104,7 @@ class DB():
         self.check_connection()
         try:
             self.check_connection()
-            query = "CREATE TABLE {} (event_time TIMESTAMP, trade_id TEXT NOT NULL, price REAL, quantity REAL, bid_id TEXT, ask_id TEXT, trade_time TIMESTAMP, maker BOOL);".format(ticker)
+            query = "CREATE TABLE {} (event_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, trade_id TEXT NOT NULL, price REAL, quantity REAL, bid_id TEXT, ask_id TEXT, trade_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, maker BOOL);".format(ticker)
             print(query)
             self.cursor.execute(query)
             self.con.commit()
