@@ -177,7 +177,7 @@ class DB():
         self.rename_table_query(table)
         query = "SELECT * FROM {} ORDER BY event_time DESC LIMIT 1;".format(table)
         self.cursor.execute(query)
-        return self.cursor.fetchall()
+        return self.cursor.fetchall()[0]
 
     def read_last_price(self, table='BTCUSDT'):
         """
